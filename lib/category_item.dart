@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:section3_mealapp/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
@@ -6,23 +7,41 @@ class CategoryItem extends StatelessWidget {
 
   CategoryItem(this.title, this.color);
 
+  void selectCategory(BuildContext ctx) {
+    Navigator.of(ctx).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return CategoryMealsScreen();
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // with const keyword padding will not be re created when buil() runs
-      // and it allow to increase the performance the app
-      padding: const EdgeInsets.all(15),
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.title,
-      ),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [color.withOpacity(0.7), color],
-          begin: Alignment.topLeft,
-          end: Alignment.topRight,
+    return InkWell(
+      onTap: () {
+        selectCategory(context);
+      },
+      splashColor: Theme.of(context).primaryColor,
+      // must be match with it child's borderRadius
+      borderRadius: BorderRadius.circular(15),
+      child: Container(
+        // with const keyword padding will not be re created when buil() runs
+        // and it allow to increase the performance the app
+        padding: const EdgeInsets.all(15),
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.title,
         ),
-        borderRadius: BorderRadius.circular(15),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [color.withOpacity(0.7), color],
+            begin: Alignment.topLeft,
+            end: Alignment.topRight,
+          ),
+          borderRadius: BorderRadius.circular(15),
+        ),
       ),
     );
   }

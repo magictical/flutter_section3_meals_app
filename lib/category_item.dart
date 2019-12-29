@@ -12,7 +12,10 @@ class CategoryItem extends StatelessWidget {
       // with const keyword padding will not be re created when buil() runs
       // and it allow to increase the performance the app
       padding: const EdgeInsets.all(15),
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.title,
+      ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [color.withOpacity(0.7), color],

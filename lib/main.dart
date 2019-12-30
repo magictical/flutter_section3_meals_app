@@ -36,6 +36,12 @@ class MyApp extends StatelessWidget {
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen()
       },
+      // default configure for route that use pushName() but not exist in routes list
+      // onGenerateRoute: (settings) {
+      //   return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      // },
+      // something like 404 page
+      // onUnknownRoute: ,
     );
   }
 }

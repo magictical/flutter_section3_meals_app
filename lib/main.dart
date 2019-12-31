@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './screens/tabs_screen.dart';
 import './screens/category_meals_screen.dart';
 import './screens/meal_detail_screen.dart';
+import './screens/filters_screen.dart';
 
 void main() {
   return runApp(MyApp());
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx) => TabScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
-        MealDetailScreen.routeName: (ctx) => MealDetailScreen()
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
       // default configure for route that use pushName() but not exist in routes list
       // onGenerateRoute: (settings) {

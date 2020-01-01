@@ -75,7 +75,7 @@ class _MyAppState extends State<MyApp> {
         CategoryMealsScreen.routeName: (ctx) =>
             CategoryMealsScreen(_availableMeals),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
-        FiltersScreen.routeName: (ctx) => FiltersScreen(_setFilters),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(_setFilters, _filters),
       },
       // default configure for route that use pushName() but not exist in routes list
       // onGenerateRoute: (settings) {
